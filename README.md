@@ -1,15 +1,52 @@
-# audio_book
-This is your Audio Book where you can read your PDFs easily.
-I have done it by using Pycharm which is a python code editor.
-For the code I have used a pip (python installation package) which are **pip install pyttsx3** and **pip install PyPDF2**
-I have installed both the packages in python terminal.
-I have took a Object Oriented programming PDF for the project to put the project in your PDF go to file location where you have saved the project and from there you can put the PDF in your project this is the download link- https://www.tutorialspoint.com/object_oriented_python/object_oriented_python_tutorial.pdf
-At the first we are importing pyttsx3 and importing PyPDF2.
-To open the PDF I have created a variable called book and the value is open('**Here your PDF name should come**','rb').
-And then we have created another variable called pdfReader and the value is PyPDF2.PdfFileReader(book).
-And to show the number of pages in the PDF we have created another variable called pages and the value is pdfReader.numPages.
-And then we are printing the variable pages to show the number of pages of the PDF.
-And then again we have created another variable called speaker and the value is pyttsx3.init() here init means initiate.
-Then we have created a for loop where the Audio Book reads the given PDF the for loop is for num in range(7, pages):
-Then inside the for loop I have written page = pdfReader.getPage(7) and text = page.extractText() and speaker.say(text) and then at the last we have written as speaker.runAndWait().
-And Yes!! Your Audio Book is ready no need to read books.
+# Create Your Own Audio Book with Python! 
+Tired of reading PDFs? Turn them into an audio book with just a few lines of Python! Here's how to do it using Pyttsx3 and PyPDF2 libraries.
+Requirements
+Install Python on your computer.
+Install the required libraries:
+pyttsx3: A Python library for text-to-speech conversion.
+PyPDF2: A library for reading and manipulating PDF files.
+Download the sample PDF file for testing here or use your own.
+Step 1: Install the Libraries
+Open your terminal or command prompt and run the following commands:
+
+pip install pyttsx3  
+pip install PyPDF2  
+Step 2: The Python Code
+Here’s the complete script for creating your audio book:
+
+import pyttsx3  
+import PyPDF2  
+
+Open the PDF file  
+book = open('object_oriented_python_tutorial.pdf', 'rb')  # Replace with your PDF file name  
+pdfReader = PyPDF2.PdfFileReader(book)  
+pages = pdfReader.numPages  
+
+Print the number of pages  
+print(f"The PDF has {pages} pages.")  
+
+Initialize the text-to-speech engine  
+speaker = pyttsx3.init()  
+
+Read the PDF from page 7 onwards  
+for num in range(7, pages):  # Start reading from page 7  
+    page = pdfReader.getPage(num)  
+    text = page.extractText()  
+    speaker.say(text)  
+    speaker.runAndWait()  
+
+print("Your Audio Book is ready!")  
+Step 3: Running Your Code
+Save the script as audio_book.py.
+Place your PDF file in the same folder as the script.
+Run the script in your Python environment (e.g., PyCharm).
+Listen to your PDF being read out loud!
+How It Works
+Read the PDF: The PyPDF2 library extracts text from the given PDF file.
+Text-to-Speech Conversion: The pyttsx3 library reads the extracted text aloud.
+Page Selection: The script skips the first 7 pages (you can adjust this).
+Notes
+Ensure the PDF file is text-based, not image-based.
+Adjust the range(7, pages) to start from a different page.
+You can customize the voice and speech rate using the pyttsx3 settings.
+Enjoy your personalized Audio Book experience! 🎧
