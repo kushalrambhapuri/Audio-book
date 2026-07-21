@@ -1,5 +1,5 @@
 # Create Your Own Audio Book with Python! 
-If you are tired of reading PDFs, turn them into an audio book with just a few lines of Python! Here's how to do it using Pyttsx3 and PyPDF2 libraries.
+Are tired of reading PDFs? Turn them into an audio book with just a few lines of Python! Here's how to do it using Pyttsx3 and PyPDF2 libraries.
 
 <br>
 Requirements:
